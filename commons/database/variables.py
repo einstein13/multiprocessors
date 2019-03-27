@@ -5,7 +5,8 @@ from commons.models import Variable
 class VariablesDatabase(object):
     
     database = [
-        {'keyword': 'user_profile_key_length', 'value_int': 3}
+        {'keyword': 'user_profile_key_length', 'value_int': 3},
+        {'keyword': 'cpu_worker_key_length', 'value_int': 5},
     ]
 
     def __init__(self):
