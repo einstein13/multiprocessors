@@ -40,7 +40,14 @@ class UserProfile(models.Model):
                 try:
                     UserProfile.objects.get(code=code)
                     code = ""
+                    itr += 1
                 except ObjectDoesNotExist as e:
                     pass
+                if itr >= treshold:
+                    value += 1
+                    if variable_object:
+                        variable_object.value_int = value
+                        variable_object.save()
+                    break
         return code
 
